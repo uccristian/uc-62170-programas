@@ -1,4 +1,4 @@
-package programasSeman02.celular;
+package programasSemana02.celular;
 
 public class Celular {
     private final String Marca;

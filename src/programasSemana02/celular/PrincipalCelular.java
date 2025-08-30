@@ -1,4 +1,4 @@
-package programasSeman02.celular;
+package programasSemana02.celular;
 
 import programasSemana02.alumno.LeerCadena;
 

@@ -10,12 +10,19 @@ public class Empresa {
         this.ProdTotal = ProdTotal;
         this.Ruc = Ruc;
     }
-    
+
     public float DevolverProd() {
         return ProdTotal;
     }
-    
-    public String Consultar() {
-        return "Ruc: " + Ruc + "\tNombre" + Nombre + "\tProduccion Total: " + ProdTotal + "\n";
+
+    public void Consultar() {
+        System.out.println("Ruc: " + Ruc);
+        System.out.println("Nombre: " + Nombre);
+        System.out.println("Produccion Total: " + ProdTotal);
+        System.out.println("");
+    }
+
+    public String GetCompanyName() {
+        return Nombre;
     }
 }
