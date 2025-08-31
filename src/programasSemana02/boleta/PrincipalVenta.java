@@ -10,8 +10,8 @@ public class PrincipalVenta {
         int cantidad = InputReader.readInt("Ingrese la cantidad");
         double precio = InputReader.readDouble("Ingrese el precio");
 
-        BoletaVenta boleta = new BoletaVenta(cantidad, nombreCliente, numBoleta, precio);
-        boleta.Mostrar();
+        BoletaVenta boleta = new BoletaVenta();
+        boleta.registrar(cantidad, nombreCliente, numBoleta, precio);
+        boleta.mostrar();
     }
-    
 }

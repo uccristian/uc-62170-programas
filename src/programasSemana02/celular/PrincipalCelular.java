@@ -1,6 +1,6 @@
 package programasSemana02.celular;
 
-import programasSemana02.alumno.LeerCadena;
+import utils.InputReader;
 
 public class PrincipalCelular {
 
@@ -8,13 +8,13 @@ public class PrincipalCelular {
         String marca, modelo, numSerieStr;
         int numSerie;
 
-        marca = LeerCadena.Lectura("Ingrese maca:");
-        modelo = LeerCadena.Lectura("Ingrese modelo:");
-        numSerieStr = LeerCadena.Lectura("Ingrese numero de serie:");
-        numSerie = Integer.parseInt(numSerieStr);
+        marca = InputReader.readString("Ingrese la marca: ");
+        modelo = InputReader.readString("Ingrese la modelo: ");
+        numSerie = InputReader.readInt("Ingrese la numero de serie: ");
 
-        Celular celular = new Celular(marca, modelo, numSerie);
+        Celular celular = new Celular();
 
+        celular.registrar(marca, modelo, numSerie);
         celular.Mostrar();
     }
     

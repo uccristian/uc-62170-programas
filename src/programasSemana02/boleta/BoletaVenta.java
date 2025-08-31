@@ -1,13 +1,16 @@
 package programasSemana02.boleta;
 
 public class BoletaVenta {
-    private final String NombreCliente;
-    private final String NumBoleta;
-    private final int Cantidad;
-    private final double Precio;
-    private final double MontoTotal;
+    private String NombreCliente;
+    private String NumBoleta;
+    private int Cantidad;
+    private double Precio;
+    private double MontoTotal;
 
-    public BoletaVenta(int Cantidad, String NombreCliente, String NumBoleta, double Precio) {
+    public BoletaVenta() {
+    }
+
+    public void registrar(int Cantidad, String NombreCliente, String NumBoleta, double Precio) {
         this.Cantidad = Cantidad;
         this.NombreCliente = NombreCliente;
         this.NumBoleta = NumBoleta;
@@ -15,7 +18,7 @@ public class BoletaVenta {
         this.MontoTotal = Precio * Cantidad;
     }
 
-    public void Mostrar() {
+    public void mostrar() {
         System.out.println("Nombre cliente: " + NombreCliente);
         System.out.println("Numero boleta: " + NumBoleta);
         System.out.println("Cantidad: " + Cantidad);

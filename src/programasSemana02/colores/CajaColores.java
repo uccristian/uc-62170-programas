@@ -1,21 +1,28 @@
 package programasSemana02.colores;
 
-public class ColorBox {
-    private final String codUtil;
-    public String descripUtil;
-    public double precioUni;
-    private final String marca;
-    private final int unidadesCaja;
-    public int cantidadVendida;
-    private final int codOferta;
-    public char descripcionOferta;
+public class CajaColores {
+    private  String codUtil;
+    private String descripUtil;
+    private double precioUni;
+    private String marca;
+    private  int unidadesCaja;
+    private int cantidadVendida;
+    private  int codOferta;
+    private char descripcionOferta;
     private double porcDescto;
 
-    public ColorBox(String codUtil, String marca, int unidadesCaja, int codOferta) {
+    public CajaColores() {
+    }
+
+    public void registrar(String codUtil, String descripUtil, double precioUni, String marca, int unidadesCaja, int cantidadVendida, int codOferta, char descripcionOferta) {
         this.codUtil = codUtil;
+        this.descripUtil = descripUtil;
+        this.precioUni = precioUni;
         this.marca = marca;
         this.unidadesCaja = unidadesCaja;
+        this.cantidadVendida = cantidadVendida;
         this.codOferta = codOferta;
+        this.descripcionOferta = Character.toUpperCase(descripcionOferta);
     }
 
     public void devolverDatosCajaColor() {
@@ -31,21 +38,25 @@ public class ColorBox {
 
     public void devolverMontoVentaTotal() {
         double monto = precioUni * cantidadVendida;
-        double montoDescuento = 0;
+
+        System.out.println("descripcionOferta: " + descripcionOferta);
 
         switch(descripcionOferta) {
             case 'A' -> {
-                porcDescto = 0.05;
+                this.porcDescto = 0.05;
             }
             case 'B' -> {
-                porcDescto = 0.1;
+                this.porcDescto = 0.1;
             }
             case 'C' -> {
-                porcDescto = 0.15;
+                this.porcDescto = 0.15;
+            }
+            default -> {
+                this.porcDescto = 0;
             }
         }
 
-        montoDescuento = monto - (monto * porcDescto);
+        double montoDescuento = monto - (monto * porcDescto);
         double montoVentaTotal = monto - montoDescuento;
         System.out.println("Monto Total: " + montoVentaTotal);
     }

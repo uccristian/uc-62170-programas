@@ -1,11 +1,14 @@
 package programasSemana02.celular;
 
 public class Celular {
-    private final String Marca;
-    private final String Modelo;
-    private final int NumSerie;
+    private String Marca;
+    private String Modelo;
+    private int NumSerie;
 
-    public Celular(String Marca, String Modelo, int NumSerie) {
+    public Celular() {
+    }
+
+    public void registrar(String Marca, String Modelo, int NumSerie) {
         this.Marca = Marca;
         this.Modelo = Modelo;
         this.NumSerie = NumSerie;

@@ -1,6 +1,5 @@
 package programasSemana02.colores;
 
-import programasSemana02.empresa.industria.Industria;
 import utils.ConsoleMenu;
 import utils.InputReader;
 
@@ -9,9 +8,9 @@ import java.util.List;
 
 public class PrincipalCajaColores {
     public static void main(String[] args) {
-        String[] options = {"Registro", "Mostrar colores", "Salir"};
+        String[] options = {"Registro", "Mostrar color", "Devolver monto total de ventas", "Salir"};
         ConsoleMenu menu = new ConsoleMenu(options);
-        List<ColorBox> color = new ArrayList<ColorBox>();
+        CajaColores cajaColores = new CajaColores();
 
         int option;
         do {
@@ -20,39 +19,29 @@ public class PrincipalCajaColores {
 
             switch (option) {
                 case 1 -> {
-                    color.add(registerColor());
+                    String codUtil = InputReader.readString("Ingresa el codigo del color");
+                    String descripUtil = InputReader.readString("Ingresa el descripcion del color");
+                    double precioUni = InputReader.readDouble("Ingresa el precio del color");
+                    String marca = InputReader.readString("Ingresa el marca del color");
+                    int unidadesCaja = InputReader.readInt("Ingresa el unidades del color");
+                    int cantidadVendida = InputReader.readInt("Ingresa el cantidad del color");
+                    int codOferta = InputReader.readInt("Ingresa el codigo del color");
+                    char descripcionOferta = InputReader.readChar("Ingresa el descripcion del color (A o B o C)");
+
+                    cajaColores.registrar(codUtil, descripUtil, precioUni, marca, unidadesCaja, cantidadVendida, codOferta, descripcionOferta);
                 }
                 case 2 -> {
-                    for (ColorBox colorBox : color) {
-                        colorBox.devolverDatosCajaColor();
-                        colorBox.devolverMontoVentaTotal();
-                        System.out.println("\n");
-                    }
+                    cajaColores.devolverDatosCajaColor();
                 }
                 case 3 -> {
-                    System.out.println("Gracias por utilizar colores");
+                    cajaColores.devolverMontoVentaTotal();
+                }
+                case 4 -> {
+                    System.out.println("");
                 }
             }
 
         } while (option != 4);
-    }
-
-    public static ColorBox registerColor() {
-        String codUtil = InputReader.readString("Ingresa el codigo del color");
-        String descripUtil = InputReader.readString("Ingresa el descripcion del color");
-        double precioUni = InputReader.readDouble("Ingresa el precio del color");
-        String marca = InputReader.readString("Ingresa el marca del color");
-        int unidadesCaja = InputReader.readInt("Ingresa el unidades del color");
-        int cantidadVendida = InputReader.readInt("Ingresa el cantidad del color");
-        int codOferta = InputReader.readInt("Ingresa el codigo del color");
-        char descripcionOferta = InputReader.readChar("Ingresa el descripcion del color (A o B o C)");
-
-        ColorBox colorBox = new ColorBox(codUtil, marca, unidadesCaja, codOferta);
-        colorBox.descripUtil = descripUtil;
-        colorBox.precioUni = precioUni;
-        colorBox.cantidadVendida = cantidadVendida;
-        colorBox.descripcionOferta = descripcionOferta;
-        return colorBox;
     }
 
 }

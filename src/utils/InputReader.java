@@ -16,7 +16,7 @@ public class InputReader {
                 String input = readString(message);
                 return Integer.parseInt(input.trim());
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Vuelva a intentar.");
+                System.out.println("Invalid input. " + message);
             }
         }
     }
@@ -27,7 +27,7 @@ public class InputReader {
                 String input = readString(message);
                 return input.charAt(0);
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Vuelva a intentar.");
+                System.out.println("Invalid input. " + message);
             }
         }
     }
@@ -38,7 +38,7 @@ public class InputReader {
                 String input = readString(message);
                 return Double.parseDouble(input.trim());
             }  catch (NumberFormatException e) {
-                System.out.println("Invalid input. Vuelva a intentar.");
+                System.out.println("Invalid input. " + message);
             }
         }
     }
