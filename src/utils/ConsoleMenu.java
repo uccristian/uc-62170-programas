@@ -3,7 +3,7 @@ package utils;
 import java.util.Scanner;
 
 public class ConsoleMenu {
-    private String[] options;
+    private final String[] options;
     private Scanner scanner;
 
     public ConsoleMenu(String[] options) {
@@ -12,14 +12,14 @@ public class ConsoleMenu {
     }
 
     public void showMenu(String title) {
-        System.out.println("\n=========" + title + "========");
+        System.out.println("\n========= " + title + " ========");
         for (int i = 0; i < options.length; i++) {
             System.out.println((i + 1) + ". " + options[i]);
         }
     }
 
     public int selectOption() {
-        int choice = -1;
+        int choice;
         while (true) {
             System.out.print("Selecciona una opcion [1-" + options.length + "]");
             choice = InputReader.readInt("");

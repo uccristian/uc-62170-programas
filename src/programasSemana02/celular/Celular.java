@@ -1,22 +1,30 @@
-package programasSemana02.celular;
+package ProgramasSemana02.Celular;
 
 public class Celular {
+    
     private String Marca;
     private String Modelo;
-    private int NumSerie;
-
-    public Celular() {
+    private int Numserie;
+    
+    public void Registrar()
+    {
+        System.out.println("Ingrese Marca celular: ");
+        this.Marca = leerCadena.lectura();
+        
+        System.out.println("Ingrese Modelo del celular: ");
+        this.Modelo = leerCadena.lectura();
+        
+        do{
+            System.out.println("Ingrese numero de serie: ");
+            this.Numserie = Integer.parseInt(leerCadena.lectura());
+            if(Numserie<=0)
+               System.out.println("ERROR. Vuelva a Ingresar");
+        }while(Numserie<=0);
     }
-
-    public void registrar(String Marca, String Modelo, int NumSerie) {
-        this.Marca = Marca;
-        this.Modelo = Modelo;
-        this.NumSerie = NumSerie;
-    }
-
-    public void Mostrar() {
-        System.out.println("La marca es: " + Marca);
-        System.out.println("El modelo es: " + Modelo);
-        System.out.println("El numero de serie es: " + NumSerie);
+    public void Mostrar()
+    {
+        System.out.println("La marca es: "+Marca);
+        System.out.println("El Modelo es: "+Modelo);
+        System.out.println("El num de serie es: "+Numserie);
     }
 }
