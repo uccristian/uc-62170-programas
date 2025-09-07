@@ -37,6 +37,33 @@ public class InputReader {
         }
     }
 
+    public static float readFloat(String message) {
+        while (true) {
+            try {
+                String input = readString(message);
+                return Float.parseFloat(input.trim());
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. Intenta nuevamente.");
+            }
+        }
+    }
+
+    public static float readFloat(String message, float minValue) {
+        while (true) {
+            try {
+                String input = readString(message + " (mínimo "  + minValue + ")");
+                float value = Float.parseFloat(input.trim());
+                if (value >= minValue) {
+                    return value;
+                } else {
+                    System.out.println("El valor debe ser mayor o igual a " + minValue + ".");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. Intenta nuevamente.");
+            }
+        }
+    }
+
 
     public static char readChar(String message) {
         while (true) {

@@ -1,5 +1,7 @@
 package ProgramasSemana02.Celular;
 
+import utils.InputReader;
+
 public class Celular {
     
     private String Marca;
@@ -8,15 +10,12 @@ public class Celular {
     
     public void Registrar()
     {
-        System.out.println("Ingrese Marca celular: ");
-        this.Marca = leerCadena.lectura();
+        this.Marca = InputReader.readString("Ingrese la marca del celular");
         
-        System.out.println("Ingrese Modelo del celular: ");
-        this.Modelo = leerCadena.lectura();
+        this.Modelo = InputReader.readString("Ingrese Modelo del celular");
         
         do{
-            System.out.println("Ingrese numero de serie: ");
-            this.Numserie = Integer.parseInt(leerCadena.lectura());
+            this.Numserie = InputReader.readInt("Ingrese numero de serie");
             if(Numserie<=0)
                System.out.println("ERROR. Vuelva a Ingresar");
         }while(Numserie<=0);
